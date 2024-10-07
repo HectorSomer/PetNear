@@ -47,4 +47,5 @@ export class AcceptProposaleComponent {
     this.proposalsRecibidas = this.proposalService.getProposalsRecibidasWithIdVeterinaria(this.veterinaria.id);  
     this.proposalsPendientes = this.proposalService.getAllProposalsPendientes();
   }
+  addPrice(){}
 }
