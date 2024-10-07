@@ -1,0 +1,30 @@
+
+<div id="conteiner">
+    <div id="login">
+        <img src="./assets/Logo.png" alt="">
+    <div id="forms_conteiner">
+      <form [formGroup]="proposalForm" id="zone">
+        <div id="description">
+          <p>Descripción:</p>
+          <textarea id="big_text" type="text" placeholder="Ej: Mi mascota ha sufrido una accidente y necesito ayuda para...." formControlName="description"></textarea>
+        </div>
+        <div>
+          <p>Mascota:</p>
+          <input type="text" placeholder="Ej: Perro Salchica" formControlName="pet">
+        </div>
+        <div>
+            <p>Fecha:</p>
+            <input type="date"  formControlName="date">
+          </div>
+          <div>
+            <p>Hora:</p>
+            <input type="time"  formControlName="time">
+          </div>
+      </form>
+    </div>
+    <div id="buttons">
+        <button (click)="back()">Cancelar</button>
+        <button (click)="addProposal()">Subir</button>
+    </div>
+    </div>
+  </div>

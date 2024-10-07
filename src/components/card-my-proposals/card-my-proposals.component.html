@@ -1,0 +1,15 @@
+<div id="card">
+    <div id="text">
+        <div id="description"><p id="parrafos"><b>Descripción:</b>{{proposalsThis.description}}</p></div>
+            <div>
+                <p id="parrafos"><b>Mascota: </b>{{proposalsThis.pet}}</p>
+             </div>
+             <div>
+                 <p id="parrafos"><b>Fecha y Hora: </b>{{proposalsThis.date}}, {{proposalsThis.time}}</p>
+             </div>
+             <div>
+                <p id ="parrafos"><b>Localidad: </b>{{proposalsThis.location}}</p>
+             </div>
+        </div>
+        <div id="buttons"><button routerLink="/editProposal" (click)="editProposal()">Editar</button><button (click)="deleteProposal()">Cancelar</button></div>
+</div>

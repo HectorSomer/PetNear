@@ -1,0 +1,23 @@
+<header>
+    <div id="box_image"><img src="./assets/Logo.png" alt=""></div>
+    <div id="box_name"> <h1>PetNear</h1></div>
+    <div id="zone_button">
+     <button>{{header.button_1}}</button>
+    </div>
+    <div id="zone_button">
+     <button routerLink="/{{header.ruta_2}}">{{header.button_2}}</button>
+    </div>
+    <div id="zone_button">
+       <button routerLink="/{{header.ruta_3}}">{{header.button_3}}</button>
+      </div>
+    <label id="menu-toggle">
+       <img id="profile" src="./assets/perfil.png" alt="Haz clic aquí">
+       <input type="checkbox" id="toggle-input">
+       <nav>
+         <ul>
+           <li><button>Editar perfil</button></li>
+           <li><button routerLink="" (click)="logout()">Cerrar sesión <img id="image_logout" src="./assets/logout.png" alt=""></button></li>
+         </ul>
+       </nav>
+     </label>
+ </header>

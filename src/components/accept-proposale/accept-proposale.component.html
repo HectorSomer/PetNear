@@ -1,0 +1,33 @@
+<app-header [header]="header"></app-header>
+<div id="title"><h1>Veterinario/a {{veterinaria.name}} de {{veterinaria.localidad}}</h1></div>
+<div *ngIf="proposalsAceptadas != null && proposalsAceptadas.length > 0">
+    <div id="h1_conteiner"><h1>Todas las Propuestas</h1></div>
+    <div id="full_zone">
+        <div id="zone">
+            <div *ngFor="let my_proposal of proposalsAceptadas">
+                <app-card-proposals [proposalsThis]="my_proposal"></app-card-proposals>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="proposalsRecibidas != null && proposalsRecibidas.length != 0">
+<div id="h1_conteiner"><h1>Propuestas recibidas</h1></div>
+<div id="full_zone">
+    <div id="zone">
+        <div *ngFor="let my_proposal of proposalsRecibidas">
+            <app-card-proposals [proposalsThis]="my_proposal" ></app-card-proposals>
+        </div>
+ </div>
+</div>
+</div>
+<div *ngIf="proposalsPendientes != null && proposalsPendientes.length != 0">
+    <div id="h1_conteiner"><h1>Propuestas pendientes</h1></div>
+    <div id="full_zone">
+        <div id="zone">
+            <div *ngFor="let my_proposal of proposalsPendientes">
+                <app-card-proposals [proposalsThis]="my_proposal" [proposalsThis]="my_proposal" (addPriceEvent)="addprice()"></app-card-proposals>
+            </div>
+        </div>
+    </div>
+</div>
+

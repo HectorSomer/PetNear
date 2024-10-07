@@ -1,0 +1,48 @@
+
+<div id="conteiner">
+    <div id="login">
+      <div id="image" >
+        <img src="./assets/Logo.png" alt="">
+      </div>
+      <div id="h1_conteiner">
+        <h1>Registrate como Cliente</h1>
+      </div>
+    <div id="forms_conteiner">
+      <form [formGroup]="namesForm" id="zone">
+        <div>
+          <p>Nombre:</p>
+          <input type="text" placeholder="Ej: Héctor" formControlName="name">
+        </div>
+        <div>
+          <p>Apellido:</p>
+          <input type="text" placeholder="Ej: Somer" formControlName="lastName">
+        </div>
+      </form>
+      <form [formGroup]="infoForm" id="zone">
+        <div>
+          <p>Correo:</p>
+          <input type="email" placeholder="Ej: hecsom1514@gmail.com" formControlName="email">
+        </div>
+        <div>
+          <p>Contraseña:</p>
+          <input type="password" placeholder="*********" formControlName="password">
+        </div>
+      </form>
+    </div>
+    <div id="unique">
+      <form [formGroup]="locationForm" id="zone">
+        <div>
+          <p>Localidad:</p>
+          <input type="text" placeholder="Real Del Bosque, Tuxtla Gutierrez, Chiapas" formControlName="location">
+        </div>
+      </form>
+    </div>
+    <button (click)="addCliente()">Registrarse</button>
+    <div id="redirection">
+      <p>¿Eres veterinario/a?,</p> <p id="color_p" routerLink="veterinaria/registro"> Registrate aquí</p>
+    </div>
+    <div id="redirection">
+        <p>Si tienes cuenta,</p> <p id="color_p" routerLink="login/veterinaria"> Inicia sesión aquí</p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<app-header [header]="header"></app-header>
+<div id="title"><h1>Bienvenido {{cliente.name}} {{cliente.lastname}} de {{cliente.localidad}}</h1></div>
+    <div *ngIf="proposalsAceptadas != null && proposalsAceptadas.length > 0">
+        <div id="h1_conteiner"><h1>Propuestas aceptadas</h1></div>
+        <div id="full_zone">
+            <div id="zone">
+                <div *ngFor="let my_proposal of proposalsAceptadas">
+                    <app-card-my-proposals [proposalsThis]="my_proposal" (deleteEvent)="deleteProposal($event)"></app-card-my-proposals>
+                </div>
+            </div>
+        </div>
+</div>
+    <div *ngIf="proposalsRecibidas != null && proposalsRecibidas.length != 0">
+    <div id="h1_conteiner"><h1>Propuestas recibidas</h1></div>
+    <div id="full_zone">
+        <div id="zone">
+            <div *ngFor="let my_proposal of proposalsRecibidas">
+                <app-card-my-proposals [proposalsThis]="my_proposal"></app-card-my-proposals>
+            </div>
+     </div>
+    </div>
+</div>
+    <div *ngIf="proposalsPendientes != null && proposalsPendientes.length != 0">
+        <div id="h1_conteiner"><h1>Propuestas pendientes</h1></div>
+        <div id="full_zone">
+            <div id="zone">
+                <div *ngFor="let my_proposal of proposalsPendientes">
+                    <app-card-my-proposals [proposalsThis]="my_proposal" [proposalsThis]="my_proposal" (deleteEvent)="deleteProposal($event)" (editEvent)="editProposal($event)"></app-card-my-proposals>
+                </div>
+            </div>
+        </div>
+    </div>
+

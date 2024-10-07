@@ -1,0 +1,19 @@
+<div id="card">
+    <div id="text">
+        <div id="h1_conteiner">
+            <h1><b>{{proposalsThis.person_name}} {{proposalsThis.person_lastname}}</b></h1>
+         </div>
+        <div id="description"><p id="parrafos">
+            <b>Descripción:</b>{{proposalsThis.description}}</p></div>
+            <div>
+                <p id="parrafos"><b>Mascota: </b>{{proposalsThis.pet}}</p>
+             </div>
+             <div>
+                 <p id="parrafos"><b>Fecha y Hora: </b>{{proposalsThis.date}}, {{proposalsThis.time}}</p>
+             </div>
+             <div>
+                <p id ="parrafos"><b>Localidad: </b>{{proposalsThis.location}}</p>
+             </div>
+        </div>
+        <div id="buttons"><form [formGroup]="priceForm" id="Precio"><p>Precio:</p><input type="number" formControlName="price"></form><button (click)="acceptProposal()">Aceptar</button></div>
+</div>
