@@ -28,8 +28,8 @@
 }
 button{
     background-color: #01228fa6;
-    color: white;
     display: flex;
+    color: rgb(211, 208, 208);
     justify-content: center;
     align-items: center;
     font-size: 20px;
@@ -91,13 +91,13 @@ p{
     flex-direction: column;
 }
 input{
-    background-color: #FFC98C;
+    background-color: #67ff38;
     width: 13vh;
     border: none;
     outline: none; 
     padding: 8px; 
     border-radius: 5px;
-    border: 2px solid  #FFE2B9;
+    border: 2px solid  #83db10;
     height: 2vh;
     display: flex;
     justify-content: center;

@@ -168,6 +168,7 @@ export class ProposalService {
       return proposalsRecibidas;
     }
   }
+ 
   public deleteProposal (id: number): number {
     let allProposals = localStorage.getItem("proposals");  
     if (allProposals) {
@@ -223,6 +224,34 @@ export class ProposalService {
         if(updateProposal.price){
           proposalExistence.price = updateProposal.price
         }
+        this,this.proposals[index] = proposalExistence;
+        localStorage.setItem("proposals", JSON.stringify(this.proposals))
+        flag= true;
+      }else{
+        flag= false
+      }
+    }
+    return flag;
+  }
+  public addPrice(id: number | undefined, price: number): boolean{
+    let allProposals = localStorage.getItem("proposals");
+    let flag = false;
+    if (allProposals) {
+      try {
+        this.proposals = JSON.parse(allProposals);
+        flag = true;
+      } catch (error) {
+        flag= false;
+      }
+    }
+    if(flag){
+      let index = this.proposals.findIndex(proposal => proposal.id === id );
+      if (index != -1){
+        let proposalExistence= this.proposals[index];
+        if(price){
+          proposalExistence.price=price
+        }
+        proposalExistence.status = "Recibido"
         this,this.proposals[index] = proposalExistence;
         localStorage.setItem("proposals", JSON.stringify(this.proposals))
         flag= true;

@@ -7,6 +7,24 @@ export class ClienteService {
   private incrementId = 0;
   private clientes: Cliente[] = [];
 
+  public login(email: string, password: string): Cliente | null{
+    let allClientes = localStorage.getItem("clientes");  
+    if (allClientes) {
+      try {
+        this.clientes = JSON.parse(allClientes);
+      } catch (error) {
+        return null;
+      }
+    }
+    let index = this.clientes.findIndex(cliente => cliente.email === email && cliente.password===password);
+    let cliente: Cliente | null;
+    if (index !== -1){
+         cliente = this.clientes[index]
+    }else{
+      cliente = null;
+    }
+    return cliente ;
+  }
   public registerCliente(cliente: Cliente): boolean {
     let clientesLog = localStorage.getItem("clientes");
     let email = false;
@@ -34,8 +52,6 @@ export class ClienteService {
       return false; 
     }
   }
-
-  constructor() { }
 }
 
 export interface Cliente {

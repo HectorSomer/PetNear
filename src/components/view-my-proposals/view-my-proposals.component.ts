@@ -4,8 +4,6 @@ import { Cliente } from '../../services/cliente/cliente.service';
 import { CardMyProposalsComponent } from '../card-my-proposals/card-my-proposals.component';
 import { CommonModule } from '@angular/common';
 import { Proposal, ProposalService } from '../../services/proposal/proposal.service';
-import { Router } from '@angular/router';
-import { console } from 'inspector';
 @Component({
   selector: 'app-view-my-proposals',
   standalone: true,

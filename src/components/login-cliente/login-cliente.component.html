@@ -7,18 +7,18 @@
         <h1>Iniciar Sesión como Cliente</h1>
       </div>
     <div id="forms_conteiner">
-      <form id="zone">
+      <form [formGroup]="login" id="zone">
         <div>
           <p>Correo:</p>
-          <input type="email" placeholder="Ej: hecsom1514@gmail.com">
+          <input formControlName="email" type="email" placeholder="Ej: hecsom1514@gmail.com">
         </div>
         <div>
           <p>Contraseña:</p>
-          <input type="password" placeholder="*********">
+          <input formControlName="password" type="password" placeholder="*********">
         </div>
       </form>
     </div>
-    <button>Iniciar Sesión</button>
+    <button (click)="loginNew()">Iniciar Sesión</button>
     <div id="redirection">
       <p>¿Eres veterinario/a?,</p> <p id="color_p" routerLink="/login/veterinaria"> Iniciar sesión aquí</p>
     </div>

@@ -25,7 +25,6 @@ export class FormEditProposalComponent {
     this.location.back()
   }
   editProposal(){
-    console.log("Entraste")
     let editProposal = localStorage.getItem("editProposal");
     let idProposal : number;
     let clienteLog : Cliente;
@@ -34,9 +33,9 @@ export class FormEditProposalComponent {
       clienteLog = JSON.parse(cliente)
       if(editProposal){
         try {
-          idProposal = parseInt(editProposal);
-          let proposal : Proposal ={
-            id: idProposal!,
+        idProposal = parseInt(editProposal);
+        let proposal : Proposal ={
+        id: idProposal!,
         description: this.proposalForm.value.description,
         person_name: clienteLog.lastname,
         person_lastname: clienteLog.name,

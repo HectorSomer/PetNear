@@ -47,5 +47,12 @@ export class AcceptProposaleComponent {
     this.proposalsRecibidas = this.proposalService.getProposalsRecibidasWithIdVeterinaria(this.veterinaria.id);  
     this.proposalsPendientes = this.proposalService.getAllProposalsPendientes();
   }
-  addPrice(){}
+
+  addPrice($event: {id: number | undefined, price: number}){
+    if(this.proposalService.addPrice($event.id, $event.price)){
+      alert("Haz recibido esta propuesta")
+    }else{
+      alert("Ha habido un error al recibir la propuesta")
+    }
+  }
 }
